@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang ="pl-PL">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link href="https://fonts.googleapis.com/css?family=Lato|Quicksand" rel="stylesheet"> 
+		<title>SyssDev - Mini Sales System</title>
+		<meta name="description" content="Mały sklep z użyciem dziedziczenia prototypowego">
+  		<meta name="keywords" content="Sklep, dziedziczenie, system sprzedaży">
+	</head>
+	<body>
+		<div class="container">			
+			<div class="modal add__storehouse">
+				<div class="modal__content">
+    				<span class="content__close storehouse__close">
+    					&times;
+    				</span>
+    				<div class="content__title">
+    					Add To Storehouse
+    				</div>
+    				<form class="content__form"> 
+    					<div class="form__name">
+    						<div class="name__title">
+    							Name
+    						</div> 
+    						<input class="name__input" type="text">
+    					</div>
+    					<div class="form__amount">
+    						<div class="amount__title">
+    							Amount
+    						</div> 
+    						<input class="amount__input" type="number">
+    					</div>
+    					<div class="form__price">
+    						<div class="price__title">
+    							Price
+    						</div> 
+    						<input class="price__input" type="number">
+    					</div>
+    				</form>
+    				<span class="content__information">
+    					You Must Complete Correctly All Red Inputs
+    				</span>
+    				<div class="content__button storehouse__button">
+    					Add To Storehouse
+    				</div>
+    			</div>
+			</div>
+			<div class="modal edit__storehouse">
+				<div class="modal__content">
+    				<span class="content__close edit__close">
+    					&times;
+    				</span>
+    				<div class="content__title">
+    					Edit Storehouse Item
+    				</div>
+    				<form class="content__form"> 
+    					<div class="form__name">
+    						<div class="name__title">
+    							Name
+    						</div> 
+    						<input class="name__input edit__name" type="text">
+    					</div>
+    					<div class="form__amount">
+    						<div class="amount__title">
+    							Amount
+    						</div> 
+    						<input class="amount__input edit__amount" type="number">
+    					</div>
+    					<div class="form__price">
+    						<div class="price__title">
+    							Price
+    						</div> 
+    						<input class="price__input edit__price" type="number">
+    					</div>
+    				</form>
+    				
+    				<div class="content__button storehouse__button edit__button">
+    					Edit Item
+    				</div>
+    			</div>
+			</div>
+			<div class="modal add__shop">  <!-- mozna podac sciezke przez add__shop do odpowiedniego elementu aby zachowac unikalnosc--> 
+				<div class="modal__content">
+    				<span class="content__close shop__close">
+    					&times;
+    				</span>
+    				<div class="content__title">
+    					Add To Shop From Storehouse
+    				</div>
+    				<form class="content__form">
+    					<div class="select__title">
+    						Choose element From Storehouse To Add To shop
+    					</div> 
+    					<select>
+    						<option value="" selected disabled hidden>Choose here</option>
+    					</select>
+    					<div class="form__amount">
+    						<div class="amount__title">
+    							Amount
+    						</div> 
+    						<input class="amount__input shop__amount" type="number">
+    					</div>
+    				</form>
+    				<span class="content__information shop__information">
+    					You Don't Have Enough Amount Of This Product 
+    				</span>
+    				<div class="content__button shop__button">
+    					Add To Shop
+    				</div>
+    			</div>
+			</div>
+			<div class="modal edit__shop">
+				<div class="modal__content">
+    				<span class="content__close shop-edit__close">
+    					&times;
+    				</span>
+    				<div class="content__title">
+    					Edit Shop Item
+    				</div>
+    				<form class="content__form"> 
+    					<div class="form__name">
+    						<div class="name__title">
+    							Name
+    						</div> 
+    						<input class="name__input edit-shop__name" type="text">
+    					</div>
+    					<div class="form__amount">
+    						<div class="amount__title">
+    							Amount
+    						</div> 
+    						<input class="amount__input edit-shop__amount" type="number">
+    					</div>
+    					<div class="form__price">
+    						<div class="price__title">
+    							Price
+    						</div> 
+    						<input class="price__input edit-shop__price" type="number">
+    					</div>
+    				</form>
+    				<div class="content__button edit-shop__button">
+    					Edit item
+    				</div>
+    			</div>
+			</div>
+			<div class="container__title">
+				<p>
+					Syss
+				</p>
+				<span>
+					Dev
+				</span> 
+				- Mini Sales System
+			</div>
+			<div class="container__app">
+				<div class="app__menu">
+					<div class="menu__user">
+						<img src="images/avatar.png" class="user__avatar">
+						<div class="user__name">
+							Admin (Default)
+						</div>
+					</div>
+					<div class="menu-section app__storehouse">
+						Storehouse
+					</div>
+					<div class="section__panel storehouse__panel">
+						<p class="panel__add-storehouse">
+							Add Element To Storehouse
+						</p>
+						<p class="panel__show-storehouse">
+							Show Storehouse 
+						</p>
+					</div>
+					<div class="menu-section app__shop">
+						Shop
+					</div>
+					<div class="section__panel shop__panel">
+						<p class="panel__add-shop">
+							Add Element From Storehouse
+						</p>
+						<p class="panel__show-shop">
+							Show Shop
+						</p>
+					</div>
+				</div>
+				<div class="app__main">
+					<div class="main__wrapper main__storehouse">
+						<div class="main__title">
+							Storehouse
+						</div>
+						<div class="main__table">
+							<div class="table__wrapper">
+								<div class="table__header">
+									<div class="header__column header__lp">
+										Lp.
+									</div>
+									<div class="header__column header__name">
+										Name
+									</div>
+									<div class="header__column header__amount">
+										Amount
+									</div>
+									<div class="header__column header__price">
+										Price
+									</div>
+									<div class="header__column header__actions">
+										Actions
+									</div>
+								</div>
+								<div class="wrapper-cell__table">
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="main__wrapper main__shop">
+						<div class="main__title">
+							Shop
+						</div>
+						<div class="main__table">
+							<div class="table__wrapper">
+								<div class="table__header">
+									<div class="header__column header__lp">
+										Lp.
+									</div>
+									<div class="header__column header__name">
+										Name
+									</div>
+									<div class="header__column header__amount">
+										Amount
+									</div>
+									<div class="header__column header__price">
+										Price
+									</div>
+									<div class="header__column header__actions">
+										Actions
+									</div>
+								</div>
+								<div class="wrapper-cell__table">
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/app-statistics.js"></script>
+		<script src="js/app-user-interface.js"></script>
+		<script src="js/app.js"></script>
+	</body>
+</html>
