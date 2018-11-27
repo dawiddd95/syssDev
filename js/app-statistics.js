@@ -10,6 +10,8 @@ let statisticsController = (function() {
 	function Shop(lp, name, amount, price) {
 		Storehouse.call(this, lp, name, amount, price);
 	}
+	
+	Shop.prototype = Object.create(Storehouse.prototype);
 
 	let dataElements = {
 		storehouse: [],
